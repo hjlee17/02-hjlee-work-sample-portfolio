@@ -1,0 +1,166 @@
+:root {
+    --turq: rgb(100, 216, 177);
+    --turq7: rgba(100, 216, 177, 0.7);
+    --turq3: rgba(100, 216, 177, 0.3);
+    --turq1: rgba(100, 216, 177, 0.1);
+    --purp: rgb(131, 65, 216);
+    --purp3: rgba(131, 65, 216, 0.3);
+    --purp1: rgba(131, 65, 216, 0.1);
+  }
+
+
+  body {
+    /*uncertain what some of these things below are doing*/
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+
+/* header container */
+.header {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* header left column - picture */
+.header-side {
+  flex: 30%;
+  background-color: white;
+  padding: 20px;
+  }
+
+#profpic {
+  display: flex;
+  margin: auto;
+  height: 350px;
+  width: 350px;
+  object-fit: scale-down;
+  }
+
+/* header right column */
+.header-main {
+  flex: 70%;
+  font-size: 75px;
+  padding-left: 50px;
+  }
+
+#name {
+  text-align: left;
+  margin-top: 100px;
+  font-family: Georgia, serif;
+  }
+
+/* navigation bar */
+.navbar {
+  display: flex;
+  font-size: small;
+  color: black;
+}
+
+/* navbar links */
+.navbar a {
+  color: black;
+  background: var(--purp3);
+  width: 130px;
+  border-radius: 10px;
+  margin: 2px;
+  /* can i horizontally center the text instead of using a top padding? */
+  padding-top: 16px;
+  height: 50px;
+  text-decoration: none;
+  text-align: center;
+  font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif
+}
+
+/* nav links on hover */
+.navbar a:hover {
+  background-color: var(--purp1);
+  color: var(--turq);
+}
+
+/* turquoise section headers */
+/* turq header bar */
+.title-container {  
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--turq7);
+  margin: 50px 10px 10px 10px;
+  height: 75px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+/* turq header bar text */
+.title-container h1 {  
+  font-family: Georgia, serif;
+  font-size: 35px;
+  margin-left: 20px;
+  color: white;
+  font-weight: lighter;
+  text-shadow: 2px 2px 5px black;
+}
+
+/* prob need to rename section... section text*/
+.text p {  
+  font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+
+
+
+/* footer text */
+.footer h1 {  
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  font-size: x-small;
+}
+
+
+
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 992px) {
+  .header, {   
+    flex-direction: column;
+  }
+  #name {   
+    text-align: center;
+    margin-top: 25px;
+  }
+   .navbar {   
+    justify-content: center;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .header, {   
+    flex-direction: column;
+  }
+  #name {   
+    text-align: center;
+    margin-top: 25px;
+  }
+   .navbar {   
+    justify-content: center;
+  }
+
+}
+@media screen and (max-width: 576px) {
+  .header, {   
+    flex-direction: column;
+  }
+  #name {   
+    text-align: center;
+    margin-top: 25px;
+  }
+   .navbar {   
+    justify-content: center;
+  }
+
+}
