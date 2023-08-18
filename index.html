@@ -10,41 +10,161 @@
 
 
   
-  <body>
+    <body>
+    <!-- header section -->
     <div class="header">
+        <!-- header left side - photo -->
         <div class="header-side">
             <img id="profpic" src="./assets/images/profpic.png">
         </div>
+        <!-- header right side - name&nav -->
         <div class="header-main">
             <div id="name">Rebecca Lee</div>
             <!-- navigation  -->
             <div class="navbar">
-                <a href="#title-container-about">about me</a>
-                <a href="#title-container-work">work</a>
-                <a href="#title-container-contact">contact</a>
+                <a href="#title-container-about">about me
+                    <span class="navbartexttip">jump to</span>
+                </a>
+                <a href="#title-container-work">work
+                    <span class="navbartexttip">jump to</span>
+                </a>
+                <a href="#title-container-contact">contact
+                    <span class="navbartexttip">jump to</span>
+                </a>
             </div>
         </div>
     </div>
     
-    <!-- there has to be a better way to organize this... the h1 and p... -->
+
+    <!-- about me section -->
     <div class="title-container">
         <h1 id="title-container-about">about me</h1>
     </div>
-    <div class="text">
-        <p>Welcome to my portfolio.</p>
-        <p>I'm a full stack coding bootcamp student based in Metro Detroit. I'm currently working on expanding my skill set and building up my portfolio.</p>
+    <div class="about">
+        <p>Welcome to my portfolio!</p>
+        <p>I'm a full stack coding bootcamp student based in Metro Detroit. I'm currently working on expanding my skill set and building up my portfolio. Check back soon for more!</p>
     </div>
 
+
+    <!-- work portfolio -->
     <div class="title-container">
         <h1 id="title-container-work">work</h1>
     </div>
 
+    <div class="work-container"> 
+        <!-- first application -->
+        <div class="work-first-row">
+            <div class="item polaroid">
+                <a href="https://hjlee17.github.io/01-horiseon-refactoring/"><img src="./assets/images/IMG_0481.png"></a>
+                <div class="caption">Horiseon Website Refactoring</div>
+            </div>
+        </div>
+        <!-- other applications currently inactive -->
+        <div class="work-column">
+            <div class="item polaroid">
+                <a href="#">
+                    <img src="./assets/images/preview2-placeholder.jpg">
+                    <div class="overlay">
+                        <div class="text">coming soon</div>
+                    </div>
+                </a> 
+                <div class="caption">Application 1</div>
+            </div>
+        </div>
+       
+        <div class="work-column">
+            <div class="item polaroid">
+                <a href="#">
+                    <img src="./assets/images/preview3-placeholder.jpg">
+                    <div class="overlay">
+                        <div class="text">coming soon</div>
+                    </div>
+                </a>   
+                <div class="caption">Application 2</div>
+            </div>        
+        </div>
+
+        <div class="work-column">
+            <div class="item polaroid">
+                <a href="#">
+                    <img src="./assets/images/preview4-placeholder.jpg">
+                    <div class="overlay">
+                        <div class="text">coming soon</div>
+                    </div>
+                </a> 
+                <div class="caption">Application 3</div>
+            </div>
+        </div>
+       
+        <div class="work-column">
+            <div class="item polaroid">
+                <a href="#">
+                    <img src="./assets/images/preview1-placeholder.jpg">
+                    <div class="overlay">
+                        <div class="text">coming soon</div>
+                    </div>   
+                </a> 
+                <div class="caption">Application 4</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- contact -->
     <div class="title-container">
         <h1 id="title-container-contact">contact</h1>
     </div>
-
-    <div class="footer">
-      <h1>💜 ty for coming 💜</h1>
+    <div class="contact-container">
+        <div class="contact" style="flex-grow: 1;">
+            <a href="mailto:heunjong.lee@gmail.com">email</a>
+        </div>
+        <div class="contact" style="flex-grow: 1;">
+            <a href="https://github.com/hjlee17">github</a>
+        </div>
+        <div class="contact" style="flex-grow: 1;">
+            <a href="https://www.instagram.com/agustd/">social</a>
+        </div>
     </div>
-  </body>
+
+
+
+    <!-- contact form -->
+    <div class="email-container">
+        <form action="/action_page.php"> <!-- form not functional -->
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="First Name">
+      
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Last Name">
+      
+          <label for="lname">Email</label>
+          <input type="text" id="email" name="email" placeholder="Email">  
+      
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something..." style="height:200px"></textarea>
+      
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer -->
+    <div class="footer">
+      <h1>💜 ty for coming, check back soon! 💜</h1>
+    </div>
+    </body>
 </html>
