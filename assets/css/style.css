@@ -5,6 +5,7 @@
     --turq3: rgba(100, 216, 177, 0.3);
     --turq1: rgba(100, 216, 177, 0.1);
     --purp: rgb(131, 65, 216);
+    --purp7: rgba(131, 65, 216, 0.7);
     --purp5: rgba(131, 65, 216, 0.5);
     --purp3: rgba(131, 65, 216, 0.3);
     --purp1: rgba(131, 65, 216, 0.1);
@@ -20,12 +21,12 @@ body {
 
 
 /* header section */
-.header {  /* header container */
+.header { /* header container */
   display: flex;
   flex-wrap: wrap;
 }
 
-.header-side {/* header left column */
+.header-side { /* header left column */
   display: flex;
   flex: 30%;
   padding: 20px;
@@ -60,6 +61,8 @@ body {
 
 .navbar a { /* navbar links */
   display: flex;
+  display: inline block; /* sets navbartexttip container */
+  position: relative; /* sets navbartexttip container */
   color: black;
   background: var(--purp3);
   width: 130px;
@@ -84,10 +87,13 @@ body {
   background-color: transparent;
   color: black;
   text-align: center;
+  font-style: italic;
+  font-size: x-small;
+    color: var(--turq);
   border-radius: 6px;
   padding: 5px 0;
-  /* position -- how can i position this relative to .navbar a items? */
   position: absolute;
+  bottom: 28px;
   z-index: 1;
 }
 
@@ -134,90 +140,6 @@ body {
 
 
 
-/* portfolio section */
-.work-container { /* work portfolio thumbnail link container */
-  display: flex;
-  flex-wrap: wrap;
-  background-color: var(--purp3);
-  padding: 15px;
-  justify-content: center;
-  margin: 10px;
-  border-radius: 10px;
-}
-
-.work-column { /* work portfolio thumbnail 4 columns - except first application */
-  position: relative;
-  flex: 25%;
-  width: 25%;
-  justify-content: center;
-  margin-top: 5px;
-  padding: 0 10px;
-  filter: grayscale(100%);
-}
-.work-first-row img { /* work portfolio first thumbnail image */
-  width: 100%;
-}
-
-.work-column img { /* work portfolio thumbnail images */
-  width: 100%;
-}
-
-.work-first-row { /* first application row */
-  position: relative;
-  flex: 100%;
-  width: 100%;
-  justify-content: center;
-  margin-top: 5px;
-  padding: 0 10px;
-}
-
-.work-first-row:hover { /* portfolio thumbnail link hover border */
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  padding: 5px;
-  filter:none;
-}
-
-.overlay { /* portfolio inactive thumbnail hover */
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-}
-
-.work-column:hover .overlay { /* portfolio inactive thumbnail text visibility on hover  */
-  opacity: 1;
-}
-
-.text { /* portfolio inactive thumbnail text */
-  color: black;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 16px;
-  font-style: italic;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-
-
-
-
-/* future CSS - combine both overlays - border and overlay text */
-
-
-
-
 
 /* portfolio polaroid layout  */
 .item { /* portfolio polaroid box  */
@@ -236,18 +158,156 @@ body {
   height: auto;
 }
 
-.caption { /* portfolio polaroid caption - application name  */
+.polaroid-caption { /* portfolio polaroid caption - application name  */
   font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
   font-size: 1em;
   text-align: center;
   line-height: 30px;
+  padding-top: 10px;
+}
+
+.polaroid-link { /* portfolio thumbnail link container */
+  position: relative;
+  display: block;
 }
 
 
 
 
 
-/* future CSS - on overlay, pictures change from grayscale to color */
+/* portfolio section */
+.work-container { /* work portfolio thumbnail link container */
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--purp3);
+  padding: 15px;
+  justify-content: center;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.work-first-row { /* first application row */
+  position: relative;
+  flex: 100%;
+  width: 100%;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 0 10px;
+}
+
+.work-column { /* work portfolio thumbnail 4 columns - except first application */
+  position: relative;
+  flex: 25%;
+  width: 25%;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 0 10px;
+}
+
+.work-first-row img { /* work portfolio first thumbnail image */
+  display: block;
+  width: 100%;
+}
+
+.work-column img { /* work portfolio thumbnail images */
+  display: block;
+  width: 100%;
+  filter: grayscale(100%);
+  transition: .5s ease;
+}
+
+.work-first-row:hover { /* portfolio active thumbnail links hover border */
+  border-style: solid;
+  border-width: 1px;
+  border-color: gray;
+  padding: 5px;
+  filter:none;
+}
+
+.work-column:hover { /* portfolio inactive thumbnail link hover border */
+  border-style: solid;
+  border-width: 1px;
+  border-color: gray;
+  padding: 5px;
+  filter:none;
+}
+
+
+/* portfolio active thumbnail ALL hover behavior */
+.overlay-active { /* portfolio active thumbnail hover purple overlay */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: .2s ease;
+  background-color: var(--purp5);
+}
+
+.overlay-active-text-bar { /* portfolio active thumbnail hover white text bar overlay */
+  position: absolute;
+  bottom: 42.5%;
+  width: 100%;
+  height: 15%; 
+  transition: .2s ease;
+  background-color: rgba(255, 255, 255, .9);
+}
+
+.text-active { /* portfolio active thumbnail text */
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2vw;
+  font-style: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.work-first-row:hover .overlay-active { /* portfolio active thumbnail text visibility on hover  */
+  opacity: 1;
+}
+
+
+
+
+
+/* portfolio inactive thumbnail ALL hover behavior */
+.overlay-inactive { /* portfolio inactive thumbnail hover */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: .2s ease;
+}
+
+.text-inactive { /* portfolio inactive thumbnail text */
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-style: italic;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.work-column:hover .overlay-inactive { /* portfolio inactive thumbnail text visibility on hover  */
+  opacity: 1;
+}
+
+.work-column:hover img { /* portfolio inactive thumbnail text visibility on hover  */
+  filter: none;
+}
 
 
 
