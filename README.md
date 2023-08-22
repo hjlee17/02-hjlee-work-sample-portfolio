@@ -1,4 +1,4 @@
-# 02-work-sample-portfolio
+# 02-hjlee-work-sample-portfolio
 
 ## Description
 
@@ -10,6 +10,8 @@ Built a portfolio website using CSS and HTML to show future employers.
 n/a
 
 ## Usage
+
+Live portfolio website; https://hjlee17.github.io/02-hjlee-work-sample-portfolio/
 
 For use to share with future employers who may want to view samples of my work.
 Site is still under construction; code needs to be added for the email form and more samples need to be added as able.
